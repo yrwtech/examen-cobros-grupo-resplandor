@@ -1,1 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Control de Cobros | Grupo Resplandor</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <header class="header">
+      <div>
+        <h1>Control de Cobros</h1>
+        <p>Demo de administración de abonos y recibos</p>
+      </div>
+
+      <div class="status-badge">
+        Demo funcional
+      </div>
+    </header>
+
+
+    <!-- SELECCIÓN DEL ALUMNO Y CONCEPTO -->
+
+    <section class="card">
+
+      <h2>Datos del cobro</h2>
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label for="alumnoSelect">Alumno</label>
+
+          <select id="alumnoSelect">
+            <option value="">Selecciona un alumno</option>
+          </select>
+        </div>
+
+
+        <div class="form-group">
+          <label for="conceptoSelect">Concepto</label>
+
+          <select id="conceptoSelect">
+            <option value="">Selecciona un concepto</option>
+          </select>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RESUMEN FINANCIERO -->
+
+    <section class="summary-grid">
+
+      <div class="summary-card">
+        <span class="summary-label">Precio total</span>
+        <strong id="precioTotal">$0.00</strong>
+      </div>
+
+
+      <div class="summary-card">
+        <span class="summary-label">Total abonado</span>
+        <strong id="totalAbonado">$0.00</strong>
+      </div>
+
+
+      <div class="summary-card highlight">
+        <span class="summary-label">Saldo pendiente</span>
+        <strong id="saldoPendiente">$0.00</strong>
+      </div>
+
+    </section>
+
+
+    <!-- REGISTRO DE ABONO -->
+
+    <section class="card">
+
+      <h2>Registrar abono</h2>
+
+      <div class="payment-row">
+
+        <div class="form-group payment-input">
+
+          <label for="montoAbono">Monto del abono</label>
+
+          <input
+            type="number"
+            id="montoAbono"
+            placeholder="Ej. 500"
+            min="0.01"
+            step="0.01"
+          >
+
+        </div>
+
+
+        <button
+          id="registrarAbonoBtn"
+          class="btn btn-primary"
+          type="button"
+        >
+          Registrar abono
+        </button>
+
+      </div>
+
+
+      <p
+        id="mensaje"
+        class="message"
+        aria-live="polite"
+      ></p>
+
+    </section>
+
+
+    <!-- HISTORIAL DE RECIBOS -->
+
+    <section class="card">
+
+      <div class="section-header">
+
+        <div>
+          <h2>Historial de recibos</h2>
+          <p>
+            Se muestran únicamente los recibos del alumno y concepto seleccionados.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="table-wrapper">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Recibo</th>
+              <th>Fecha</th>
+              <th>Monto</th>
+              <th>Estatus</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+
+          <tbody id="historialBody">
+
+            <tr>
+              <td colspan="5" class="empty-state">
+                Selecciona un alumno y un concepto para consultar su historial.
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+
+    <!-- UTILIDAD PARA QA -->
+
+    <section class="qa-section">
+
+      <button
+        id="reiniciarBtn"
+        class="btn btn-secondary"
+        type="button"
+      >
+        Reiniciar datos de prueba
+      </button>
+
+      <p>
+        Esta opción elimina los recibos almacenados localmente y permite repetir la validación.
+      </p>
+
+    </section>
+
+
+    <footer>
+      Demo técnico · Grupo Resplandor
+    </footer>
+
+  </main>
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>
